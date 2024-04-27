@@ -1,11 +1,5 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
-import {
-  AppBar,
-  Toolbar,
-  CssBaseline,
-  useTheme,
-  useMediaQuery,
-} from "@material-ui/core";
+import { AppBar, Toolbar, CssBaseline, useTheme, useMediaQuery } from "@material-ui/core";
 import { AiTwotoneHome } from "react-icons/ai";
 import { MdOutlineDescription } from "react-icons/md";
 import { FiUser } from "react-icons/fi";
@@ -44,31 +38,21 @@ const MainNavigation = () => {
           ) : (
             <nav style={styles.navContainer}>
               <div style={styles.linksContainer}>
-                <NavLink
-                  to="/"
-                  style={({ isActive }) =>
-                    isActive ? styles.activeLink : styles.link
-                  }
-                  onClick={() => setProgress(100)}
-                >
+                {/* <NavLink to="/" style={({ isActive }) => (isActive ? styles.activeLink : styles.link)} onClick={() => setProgress(100)}>
                   <AiTwotoneHome style={styles.linkIcon} />
                   Home
                 </NavLink>
                 <NavLink
                   to="/about"
-                  style={({ isActive }) =>
-                    isActive ? styles.activeLink : styles.link
-                  }
+                  style={({ isActive }) => (isActive ? styles.activeLink : styles.link)}
                   onClick={() => setProgress(100)}
                 >
                   <MdOutlineDescription style={styles.linkIcon} />
                   About
-                </NavLink>
+                </NavLink> */}
                 <NavLink
                   to="/secure-content"
-                  style={({ isActive }) =>
-                    isActive ? styles.activeLink : styles.link
-                  }
+                  style={({ isActive }) => (isActive ? styles.activeLink : styles.link)}
                   onClick={() => setProgress(100)}
                 >
                   <FiUser style={styles.linkIcon} />

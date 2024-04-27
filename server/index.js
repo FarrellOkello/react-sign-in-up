@@ -15,6 +15,9 @@ const authRoute = require("./routes/authorisation");
 const refreshTokenRoute = require("./routes/refreshToken");
 const logoutRoute = require("./routes/logout");
 const employeesRoute = require("./routes/employees");
+const studentsRoute = require("./routes/students");
+const parentsRoute = require("./routes/parentGardian");
+const academicPerformanceRoute = require("./routes/academicPerformance");
 const subscribersRoute = require("./routes/subscribers");
 const rootRoute = require("./routes/root");
 
@@ -50,12 +53,14 @@ app.use("/api/refresh", refreshTokenRoute);
 app.use("/api/logout", logoutRoute);
 app.use("/api/employees", employeesRoute);
 app.use("/api/subscribers", subscribersRoute);
+app.use("/api/students", studentsRoute);
+app.use("/api/parents", parentsRoute);
+app.use("/api/academicperformances", academicPerformanceRoute);
 
 const PORT = process.env.PORT || 5000;
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/build")));
-
   app.use("*", rootRoute);
 }
 

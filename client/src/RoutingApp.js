@@ -1,7 +1,7 @@
 import { useRoutes } from "react-router-dom";
 import {
-  HomePage,
-  AboutPage,
+  // HomePage,
+  // AboutPage,
   SecuredContentPage,
   CoursesPage,
   LoginPage,
@@ -17,14 +17,12 @@ import {
 import { MainNavigation, SubNavigation } from "components/Navigation";
 import { PersistLogin } from "PersistLogin";
 import { RequireAuth } from "RequireAuth";
-
-// const { REACT_APP_ADMIN, REACT_APP_EDITOR, REACT_APP_USER } = process.env;
-
-// const ROLES = {
-//   Admin: +REACT_APP_ADMIN,
-//   Editor: +REACT_APP_EDITOR,
-//   User: +REACT_APP_USER,
-// };
+import AnonymousLayout from "components/Layout/AnonymousLayout";
+import StudentsDataPage from "pages/Students/StudentsDataPage/StudentsDataPage";
+import CreateStudentPage from "pages/Students/CreateStudentPage/CreateStudentPage";
+import { UpdateStudent } from "pages/Students";
+import ParentsDataPage from "pages/Parents/ParentsDataPage";
+import AcademicPerformanceDataPage from "pages/AcademicPerformances/AcademicPerformanceDataPage";
 
 const ROLES = {
   Admin: 5150,
@@ -35,30 +33,32 @@ const ROLES = {
 export const RoutesApp = () => {
   const routes = [
     {
+      layout: AnonymousLayout,
+      element: <LoginPage />,
+      path: "/login",
+    },
+    {
+      layout: AnonymousLayout,
+      element: <RegisterPage />,
+      path: "/register",
+    },
+    {
       path: "/",
       element: <MainNavigation />,
       children: [
-        { path: "/", element: <HomePage /> },
-        { path: "about", element: <AboutPage /> },
-        { path: "register", element: <RegisterPage /> },
+        // { path: "/", element: <HomePage /> },
+        // { path: "about", element: <AboutPage /> },
         { path: "unauthorized", element: <SecuredPageInfo /> },
-        { path: "login", element: <LoginPage /> },
         {
           element: <PersistLogin />,
           children: [
             {
-              element: (
-                <RequireAuth
-                  allowedRoles={[ROLES.User, ROLES.Editor, ROLES.Admin]}
-                />
-              ),
+              element: <RequireAuth allowedRoles={[ROLES.User, ROLES.Editor, ROLES.Admin]} />,
               children: [
                 {
                   path: "/",
 
-                  element: (
-                    <SubNavigation allowedRoles={[ROLES.Admin, ROLES.Editor]} />
-                  ),
+                  element: <SubNavigation allowedRoles={[ROLES.Admin, ROLES.Editor]} />,
                   children: [
                     {
                       path: "/secure-content",
@@ -81,11 +81,27 @@ export const RoutesApp = () => {
                       element: <UpdateEmployee />,
                     },
                     {
-                      element: (
-                        <RequireAuth
-                          allowedRoles={[ROLES.Admin, ROLES.Editor]}
-                        />
-                      ),
+                      path: "/students",
+                      element: <StudentsDataPage />,
+                    },
+                    {
+                      path: "/create-student",
+                      element: <CreateStudentPage />,
+                    },
+                    {
+                      path: "/update-student/:id",
+                      element: <UpdateStudent />,
+                    },
+                    {
+                      path: "/parents",
+                      element: <ParentsDataPage />,
+                    },
+                    {
+                      path: "/academicperformances",
+                      element: <AcademicPerformanceDataPage />,
+                    },
+                    {
+                      element: <RequireAuth allowedRoles={[ROLES.Admin, ROLES.Editor]} />,
                       children: [
                         {
                           path: "/subscribers",

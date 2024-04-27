@@ -24,13 +24,13 @@ const handleLogin = async (req, res, next) => {
         email: foundSubscriber?.email,
         roles: roles,
       },
-      process.env.ACCESS_TOKEN_SECRET,
+      "process.env.ACCESS_TOKEN_SECRET",
       { expiresIn: "600s" }
     );
 
     const refreshToken = jwt.sign(
       { email: foundSubscriber?.email },
-      process.env.REFRESH_TOKEN_SECRET,
+      "process.env.REFRESH_TOKEN_SECRET",
       { expiresIn: "1h" }
     );
 

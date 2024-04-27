@@ -15,7 +15,7 @@ const handleRefreshToken = async (req, res) => {
   if (!foundSubscriber) return res.sendStatus(403); //Forbidden
 
   // evaluate jwt
-  jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, decoded) => {
+  jwt.verify(refreshToken, "process.env.REFRESH_TOKEN_SECRET", (err, decoded) => {
     if (err || foundSubscriber.email !== decoded.email) {
       return res.sendStatus(403);
     }
@@ -28,7 +28,7 @@ const handleRefreshToken = async (req, res) => {
         roles: roles,
       },
 
-      process.env.ACCESS_TOKEN_SECRET,
+      "process.env.ACCESS_TOKEN_SECRET",
       { expiresIn: "1h" }
     );
 

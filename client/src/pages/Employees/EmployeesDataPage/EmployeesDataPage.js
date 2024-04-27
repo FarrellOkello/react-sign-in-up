@@ -54,13 +54,7 @@ const EmployeesDataPage = () => {
   return (
     <StyledContainer>
       <StyledHeading text="Employees List" />
-
-      <p>
-        Below are <strong style={{ color: "darkgreen" }}>employees</strong> data
-        imported from MongoDB data base. You can basically create new employee,
-        update data or remove them from the server.
-      </p>
-
+      
       <div style={styles.tableContent}>
         {employees.status === "loading" ? (
           <Loader text="loading list" />

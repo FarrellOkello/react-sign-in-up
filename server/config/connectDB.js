@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_ACCESS, {
+    await mongoose.connect("mongodb://localhost:27017/cashback", {
       useUnifiedTopology: true,
       useNewUrlParser: true,
     });

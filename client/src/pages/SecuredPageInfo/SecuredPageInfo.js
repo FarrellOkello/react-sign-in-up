@@ -11,11 +11,8 @@ const SecuredPageInfo = () => (
     <p>
       <GiKeyLock style={styles.icon} />
     </p>
-
     <StyledHeading text="Page Secured" />
-
     <p>Please log in to the content.</p>
-
     <div style={styles.linksContainer}>
       <SignInLink />
       <SignUpLink />

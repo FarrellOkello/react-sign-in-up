@@ -14,34 +14,41 @@ const SubNavigation = ({ allowedRoles }) => {
   return (
     <>
       <AppBar position="static" className={classes.appBar}>
-        <NavLink
-          to="courses"
-          style={({ isActive }) => (isActive ? styles.activeLink : styles.link)}
-        >
+        <NavLink to="courses" style={({ isActive }) => (isActive ? styles.activeLink : styles.link)}>
           <MdOutlineCastForEducation style={styles.linkIcon} />
-          Courses
+          Universities & Courses available
         </NavLink>
-        <NavLink
-          to="employees"
-          style={({ isActive }) => (isActive ? styles.activeLink : styles.link)}
-        >
+        <NavLink to="employees" style={({ isActive }) => (isActive ? styles.activeLink : styles.link)}>
           <ImDatabase style={styles.linkIcon} />
           Employees
         </NavLink>
 
         {auth?.roles.find((role) => allowedRoles.includes(role)) && (
-          <NavLink
-            to="subscribers"
-            style={({ isActive }) =>
-              isActive ? styles.activeLink : styles.link
-            }
-          >
+          <NavLink to="subscribers" style={({ isActive }) => (isActive ? styles.activeLink : styles.link)}>
             <RiAdminFill style={styles.linkIcon} />
             Subscribers
           </NavLink>
         )}
-      </AppBar>
 
+        {auth?.roles.find((role) => allowedRoles.includes(role)) && (
+          <NavLink to="students" style={({ isActive }) => (isActive ? styles.activeLink : styles.link)}>
+            <RiAdminFill style={styles.linkIcon} />
+            Students
+          </NavLink>
+        )}
+        {auth?.roles.find((role) => allowedRoles.includes(role)) && (
+          <NavLink to="parents" style={({ isActive }) => (isActive ? styles.activeLink : styles.link)}>
+            <RiAdminFill style={styles.linkIcon} />
+            Parents
+          </NavLink>
+        )}
+         {auth?.roles.find((role) => allowedRoles.includes(role)) && (
+          <NavLink to="academicperformances" style={({ isActive }) => (isActive ? styles.activeLink : styles.link)}>
+            <RiAdminFill style={styles.linkIcon} />
+            Academic Performances
+          </NavLink>
+        )}
+      </AppBar>
       <Outlet />
     </>
   );
