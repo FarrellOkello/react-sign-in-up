@@ -45,3 +45,7 @@
 20220717	00:19:26	KcYyP-tT6O	TypeError: Cannot read property 'email' of undefined
 20220717	00:19:27	zG7inyEG2t	TypeError: Cannot read property 'email' of undefined
 20220717	00:19:29	ch8yZHR-kT	TypeError: Cannot read property 'email' of undefined
+20240720	13:12:13	yrF4cw6tP2	Error: Not allowed by CORS
+20240720	13:12:22	5z1L3ylLEE	Error: Not allowed by CORS
+20240720	13:12:27	oTRASoz1xr	Error: Not allowed by CORS
+20240720	13:12:53	rqQy95yNsl	Error: Not allowed by CORS

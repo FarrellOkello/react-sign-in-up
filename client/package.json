@@ -21,10 +21,10 @@
     "axios": "^0.27.2",
     "dotenv": "^10.0.0",
     "graphql": "^16.8.1",
-    "react": "^18.2.0",
+    "react": "^18.3.1",
     "react-bootstrap": "^2.10.2",
     "react-confirm-alert": "^3.0.6",
-    "react-dom": "^18.2.0",
+    "react-dom": "^18.3.1",
     "react-hook-form": "^7.32.1",
     "react-icons": "^4.4.0",
     "react-redux": "^9.1.1",
@@ -64,3 +64,4 @@
     ]
   }
 }
+t

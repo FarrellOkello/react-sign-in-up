@@ -1303,3 +1303,9 @@
 20240720	11:59:39	w-6lsl1xbu	POST	http://localhost:3000	/api/login
 20240720	12:01:51	nGG50zSRE	OPTIONS	http://localhost:3000	/api/employees
 20240720	12:01:51	PerPxIzP3t	GET	http://localhost:3000	/api/employees
+20240720	12:34:24	JkidOwfkU	OPTIONS	http://localhost:3000	/api/login
+20240720	12:34:24	VDQA4xyQyJ	POST	http://localhost:3000	/api/login
+20240720	13:12:13	2X7EaQz61	OPTIONS	http://localhost:3001	/api/login
+20240720	13:12:22	vGCjRjssC	OPTIONS	http://localhost:3001	/api/login
+20240720	13:12:27	U3VeBwiVS	OPTIONS	http://localhost:3001	/api/login
+20240720	13:12:53	ZvOmwSc1B	OPTIONS	http://localhost:3001	/api/login
