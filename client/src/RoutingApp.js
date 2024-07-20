@@ -23,6 +23,7 @@ import CreateStudentPage from "pages/Students/CreateStudentPage/CreateStudentPag
 import { UpdateStudent } from "pages/Students";
 import ParentsDataPage from "pages/Parents/ParentsDataPage";
 import AcademicPerformanceDataPage from "pages/AcademicPerformances/AcademicPerformanceDataPage";
+import CreateAcademicPerformancePage from "pages/AcademicPerformances/CreateAcademicPerformancePage";
 
 const ROLES = {
   Admin: 5150,
@@ -99,6 +100,10 @@ export const RoutesApp = () => {
                     {
                       path: "/academicperformances",
                       element: <AcademicPerformanceDataPage />,
+                    },
+                    {
+                      path: "/create-academicperformance",
+                      element: <CreateAcademicPerformancePage />,
                     },
                     {
                       element: <RequireAuth allowedRoles={[ROLES.Admin, ROLES.Editor]} />,
