@@ -1,7 +1,7 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { AppBar, Toolbar, CssBaseline, useTheme, useMediaQuery } from "@material-ui/core";
-import { AiTwotoneHome } from "react-icons/ai";
-import { MdOutlineDescription } from "react-icons/md";
+// import { AiTwotoneHome } from "react-icons/ai";
+// import { MdOutlineDescription } from "react-icons/md";
 import { FiUser } from "react-icons/fi";
 
 import { styles, useStyles } from "./styles.js";
