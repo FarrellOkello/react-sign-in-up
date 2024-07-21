@@ -2,8 +2,8 @@ import axios from "axios";
 
 const BASE_URL =
   process.env.NODE_ENV === "production"
-    ? "https://react-sign-in-up.herokuapp.com"
-    : "http://localhost:5000";
+    ? "http://13.51.238.245"
+    : "http://13.51.238.245:5000";
 
 export default axios.create({
   baseURL: BASE_URL,
